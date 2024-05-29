@@ -1,5 +1,5 @@
-const apiKey="a2ea53d6d4771827acd7962ae9071f0b";
-const apiUrl="https://api.openweathermap.org/data/2.5/weather";
+const apiKey="a2ea53d6d4771827acd7962ae9071f0b";     
+const apiUrl="https://api.openweathermap.org/data/2.5/weather";   //apiurl where you can get the data from
 
 const searchBox=document.querySelector(".search input");
 const searchBtn=document.querySelector(".search button");
@@ -7,16 +7,16 @@ const searchBtn=document.querySelector(".search button");
 
 async function checkWeather(city){
     city=searchBox.value
-    const response = await fetch(`${apiUrl}?q=${city}&appid=${apiKey}&unit=metric`);
-       if (response.status==404){
+    const response = await fetch(`${apiUrl}?q=${city}&appid=${apiKey}&unit=metric`);          //data is fetched
+       if (response.status==404){                                                           //check for status
              document.querySelector(".error").style.display="block";
              document.querySelector(".weather").style.display="none";
        }
-       else{
+       else{            
         var data= await response.json();
     
         tempinc=data.main.temp - 273;
-
+                                           //the place where the html modification starts 
         console.log(data)
         document.querySelector(".city").innerHTML=data.name;
         document.querySelector(".temp").innerHTML=Math.round(tempinc) +"°C";
@@ -30,7 +30,7 @@ async function checkWeather(city){
       
     
 }
-searchBtn.addEventListener("click",()=>{
+searchBtn.addEventListener("click",()=>{   //clicking action is defined here 
     checkWeather(searchBox.Value);
 })
 
@@ -38,6 +38,3 @@ searchBtn.addEventListener("click",()=>{
 
 
 
-////`&appid=${apiKey}`
-
-//const response = await fetch(`${apiUrl}?q=${city}&appid=${apiKey}`);
