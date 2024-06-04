@@ -67,3 +67,15 @@ api : open weather api
   
 
   to get the celcius version use  "&unit=metric"  in the api_Url
+
+
+
+
+
+
+
+
+
+
+  <h6>launched the website through the aws  provided by amazon </h6>
+link to the site :  https://d9kn231pa63tw.cloudfront.net
